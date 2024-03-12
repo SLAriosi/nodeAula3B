@@ -1,13 +1,13 @@
 const express = require('express')
-const dB = require('./dB/conexao')
+const db = require('./dB/conexao')
 const Sequelize = require('sequelize')
 
-dB.authenticate()
+db.authenticate()
     .then(() => {
         console.log('Conectou ao Banco de Dados')
     })
-    .catch((erro) => {
-        console.log(`Erro ao tentar conectar no DB ${erro}`)
+    .catch((error) => {
+        console.log(`Erro ao tentar conectar no DB ${error}`)
     })
 
 const PORT = 3001
